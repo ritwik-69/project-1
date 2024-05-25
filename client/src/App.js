@@ -5,7 +5,9 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { themeSettings } from "theme";
 import Layout from "scenes/layout"
 import Dashboard from "scenes/dashboard"
+import Product from "scenes/products"
 import { useSelector } from "react-redux";
+import Customers from "scenes/customers";
 
 function App() {
   //setting up redux
@@ -22,6 +24,8 @@ function App() {
           <Route element={<Layout/>} >
             <Route path="/" element={<Navigate to="/dashboard" replace/>} />
             <Route path="/dashboard" element={<Dashboard/>} />
+            <Route path="/products" element={<Product/>} />
+            <Route path="/customers" element={<Customers />} />
 
             </Route>
         </Routes>
