@@ -11,12 +11,16 @@ import managementRoutes from './routes/management.route.js'
 import salesRoutes from './routes/sales.route.js'
 
 
+
 // data imports 
 import User from "./models/user.model.js"
 import {dataUser} from "./data/index.js"
 import Product from './models/Product.model.js';
-import { dataProductStat,dataProduct } from './data/index.js';
+import { dataProductStat,dataProduct,dataTransaction ,dataOverallStat} from './data/index.js';
 import ProductStat from './models/ProductStat.model.js';
+import Transaction from './models/Transaction.model.js';
+import OverallStat from './models/OverallStat.model.js';
+
 
 
 //config
@@ -39,7 +43,7 @@ app.use("/client",clientRoutes)
 
 app.use("/general",generalRoutes)
 app.use("/management",managementRoutes)
-app.use("sales",salesRoutes )
+app.use("/sales",salesRoutes )
 
 
 // mongoose setup 
@@ -50,6 +54,8 @@ mongoose.connect(process.env.MONGO_URL).then(()=>{
     app.listen(port , ()=>{console.log("server port",`${port}`)});
     //  Product.insertMany(dataProduct);
     //  ProductStat.insertMany(dataProductStat);
+    // Transaction.insertMany(dataTransaction);
     // User.insertMany(dataUser)
+    // OverallStat.insertMany(dataOverallStat)
 }).catch((error)=>{console.log(`mongodb error : ${error}`)})
 

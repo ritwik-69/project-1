@@ -8,6 +8,9 @@ import Dashboard from "scenes/dashboard"
 import Product from "scenes/products"
 import { useSelector } from "react-redux";
 import Customers from "scenes/customers";
+import Transactions from "scenes/transactions";
+import Geography from "scenes/geography";
+import Overview from "scenes/overview";
 
 function App() {
   //setting up redux
@@ -26,6 +29,9 @@ function App() {
             <Route path="/dashboard" element={<Dashboard/>} />
             <Route path="/products" element={<Product/>} />
             <Route path="/customers" element={<Customers />} />
+            <Route path="/transactions" element={<Transactions/>} />
+            <Route path="/geography" element={<Geography/>} />
+            <Route path="/overview" element={<Overview/>} />
 
             </Route>
         </Routes>
